@@ -10,7 +10,7 @@
 body {
     padding: 0 70px;
     position: relative;
-    background-color: #ec538625;
+    background-color: #ec53860c;
 }
 
 body::before {
@@ -21,6 +21,7 @@ body::before {
     background-color: #ec5386;
     border-radius: 50%;
     filter: blur(150px);
+    top: 12rem;
 }
 
 body::after {
@@ -30,13 +31,10 @@ body::after {
     height: 14rem;
     background-color: #ec5386;
     border-radius: 50%;
-    filter: blur(150px);
+    filter: blur(140px);
     right: 0;
-    top: 400px;
-}
-
-img {
-    width: 60px;
+    top: 0;
+    z-index: -100;
 }
 
 /* Header Section */
@@ -100,32 +98,28 @@ img {
     display: none;
 }
 
-.favourite-icon,
 .cart-icon {
     position: relative;
 }
 
-.favourite-icon i,
-.cart-icon i {
+.cart-icon img {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    width: 75px;
     color: #f91360;
-    background-color: #fe1d6831;
     padding: 6px 16px;
     border-radius: 4px;
 }
 
-.favourite-icon span,
 .cart-icon span {
     position: absolute;
-    background-color: red;
-    top: -12px;
-    right: -10px;
+    color: rgb(192, 0, 0);
+    top: 0;
+    right: 22px;
     border-radius: 50%;
-    font-size: .8rem;
-    color: #fff;
+    font-size: .9rem;
+    font-weight: bold;
 }
 
 .cart-icon span {
@@ -144,7 +138,6 @@ img {
 
 .hero-context {
     max-width: 38rem;
-    /* width: 22rem */
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -212,6 +205,7 @@ img {
 /* Menu Page */
 .menu-page {
     margin-bottom: 4rem;
+    background-color: #fff;
 }
 .menu-header {
     display: flex;
@@ -236,28 +230,31 @@ img {
     margin: 2rem 0;
 }
 
-.products {
+.product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    border-top: 1px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
 }
 
 
-.product {
-    background-color: #ffcfe0;
-    border-radius: 6px;
+.product-container {
+    border-right: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-.product .product-image {
+.product-container .product-image {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
-.product .product-image img {
+.product-container .product-image img {
     width: 80%;
+    height: 100%;
 }
 
 .product-detail {
@@ -272,13 +269,11 @@ img {
 }
 
 .price {
-    /* font-size: 1.2rem; */
     padding: .6rem 0;
 }
 
-.rating i {
-    color: #ea2265;
-    color: goldenrod;
+.rating img {
+    width: 100px;
 }
 
 .add-to-cart {
