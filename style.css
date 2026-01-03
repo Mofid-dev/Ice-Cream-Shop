@@ -55,13 +55,15 @@ body::after {
 
 .nav {
     display: flex;
+    align-items: center;
     gap: 25px;
 }
 
-.nav .link {
+.nav a {
     text-decoration: none;
     color: #d91153;
     position: relative;
+    width: auto;
 }
 
 .nav .link:before {
@@ -98,8 +100,8 @@ body::after {
 
 .count-items {
     position: absolute;
-    top: -7px;
-    right: 35px;
+    top: -4px;
+    right: 14px;
 }
 
 .menu-toggle {
@@ -293,10 +295,6 @@ body::after {
         display: none;
     }
 
-    .count-items {
-        right: 48.6%;
-    }
-
     .nav.active {
         display: flex;
     }
@@ -345,10 +343,6 @@ body::after {
 
 /* Mobile Responsive */
 @media (max-width: 416px) {
-    /* Header */
-    .count-items {
-        right: 47.9%;
-    }
     /* Home Page */
     .hero-section {
         margin-top: 2rem;
