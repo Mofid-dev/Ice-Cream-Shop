@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Header</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f91360;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.nav a:before {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #ea2265;
+    bottom: -2px;
+}
+
+.nav a:hover {
+    color: #ec5386;
+    transition: all .4s ease-in-out;
+}
+
+.nav a:hover::before{
+    width: 70%;
+    transition: width .4s ease-in-out;
+}
+
+.cart {
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <img src="images/logo/logo.png" alt="">
+  </div>
+
+  <nav class="nav" id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#about-us">About Us</a>
+    <a href="#">Menu</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#" class="cart">
+        <span class="count-items js-count-items">0</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+  </nav>
+
+  <div class="menu-toggle" id="menuToggle">
+    ☰
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>

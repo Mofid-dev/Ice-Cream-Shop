@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 body {
-    padding: 0 70px;
     position: relative;
     background-color: #ec53860c;
 }
@@ -39,37 +38,33 @@ body::after {
 
 /* Header Section */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
     width: 50px;
-    cursor: pointer;
 }
 
-.nav-bar {
+.nav {
     display: flex;
-    align-items: center;
-    gap: 1.6rem;
+    gap: 25px;
 }
 
-.nav-bar-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.nav-bar-links a {
+.nav .link {
     text-decoration: none;
-    color: #f91360;
+    color: #d91153;
     position: relative;
-    font-size: 1.1rem;
 }
 
-.nav-bar-links a:before {
+.nav .link:before {
     position: absolute;
     content: '';
     width: 0%;
@@ -78,52 +73,39 @@ body::after {
     bottom: -2px;
 }
 
-.nav-bar-links a:hover {
+.nav .link:hover {
     color: #ec5386;
     transition: all .4s ease-in-out;
 }
 
-.nav-bar-links a:hover::before{
+.nav .link:hover::before{
     width: 70%;
     transition: width .4s ease-in-out;
 }
 
-.nav-bar-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.menu-icon {
-    display: none;
-}
-
-.cart-icon {
-    position: relative;
-}
-
-.cart-icon img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 75px;
-    color: #f91360;
-    padding: 6px 16px;
-    border-radius: 4px;
-}
-
-.cart-icon span {
-    position: absolute;
-    color: rgb(192, 0, 0);
-    top: 0;
-    right: 22px;
-    border-radius: 50%;
-    font-size: .9rem;
+.cart {
     font-weight: bold;
+    position: relative;
+    width: 2.3rem;
+    color: #d91153;
+    cursor: pointer;
+    width: 100%;
 }
 
-.cart-icon span {
-    padding: 2px 7px;
+.cart img {
+    width: 45px;
+}
+
+.count-items {
+    position: absolute;
+    top: -7px;
+    right: 35px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 /* HOME PAGE */
@@ -164,7 +146,7 @@ body::after {
 .here-image img {
     max-width: 30rem;
     width: 18rem;
-    animation: float-juice infinite 5s;
+    animation: float-juice infinite 3.6s;
 }
 
 /* About Us page */
@@ -288,10 +270,6 @@ body::after {
 
 /* Tablet Responsive*/
 @media (max-width: 778px) {
-    body {
-        padding: 0 45px;
-    }
-
     body::before {
         width: 12rem;
         height: 12rem;
@@ -302,31 +280,29 @@ body::after {
         height: 12rem;
     }
 
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-bar {
-        position: relative;
-    }
-
-    .nav-bar-links {
+    /* Header */
+    .nav {
         position: absolute;
-        display: none;
+        top: 80px;
+        right: 0;
+        background: white;
         flex-direction: column;
-        gap: .5rem;
-        background-color: #ff93b73a;
-        padding: 10px;
-        border-radius: 6px;
-        top: 2.2rem;
-        right: -45px;
-        width: 200px;
-        transition: all .3s ease;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        display: none;
     }
 
-    .open {
+    .count-items {
+        right: 48.6%;
+    }
+
+    .nav.active {
         display: flex;
-        transition: all .3s ease;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     /* Home Page */
@@ -335,6 +311,7 @@ body::after {
         margin-top: 6rem;
         justify-content: center;
         gap: 2.6rem;
+        padding: 0 10vw;
     }
 
     .hero-context {
@@ -351,6 +328,9 @@ body::after {
     }
 
     /* About Us Page */
+    .about-us {
+        padding: 0 10vw;
+    }
     .about-body {
         flex-direction: column;
     }
@@ -365,8 +345,9 @@ body::after {
 
 /* Mobile Responsive */
 @media (max-width: 416px) {
-    body {
-        padding: 0 28px;
+    /* Header */
+    .count-items {
+        right: 47.9%;
     }
     /* Home Page */
     .hero-section {

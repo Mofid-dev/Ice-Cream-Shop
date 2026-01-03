@@ -1,7 +1,5 @@
-const menuIcon = document.querySelector(".menu-icon");
-const navLinks = document.querySelector(".nav-bar-links");
+let productsHTML = '';
 
-let productsHTML = ''
 products.forEach(product => {
     productsHTML += `
     <div class="product-container">
@@ -57,7 +55,3 @@ document.querySelectorAll(".js-add-to-cart")
 
         })
     })
-
-menuIcon.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
