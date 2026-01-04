@@ -36,80 +36,6 @@ body::after {
     z-index: -100;
 }
 
-/* Header Section */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo img {
-    width: 50px;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #d91153;
-    position: relative;
-    width: auto;
-}
-
-.nav .link:before {
-    position: absolute;
-    content: '';
-    width: 0%;
-    height: 2px;
-    background-color: #ea2265;
-    bottom: -2px;
-}
-
-.nav .link:hover {
-    color: #ec5386;
-    transition: all .4s ease-in-out;
-}
-
-.nav .link:hover::before{
-    width: 70%;
-    transition: width .4s ease-in-out;
-}
-
-.cart {
-    font-weight: bold;
-    position: relative;
-    width: 2.3rem;
-    color: #d91153;
-    cursor: pointer;
-    width: 100%;
-}
-
-.cart img {
-    width: 45px;
-}
-
-.count-items {
-    position: absolute;
-    top: -4px;
-    right: 14px;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-}
-
 /* HOME PAGE */
 .hero-section {
     width: 100%;
@@ -280,27 +206,6 @@ body::after {
     body::after {
         width: 12rem;
         height: 12rem;
-    }
-
-    /* Header */
-    .nav {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        display: none;
-    }
-
-    .nav.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
     }
 
     /* Home Page */
