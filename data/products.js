@@ -3,7 +3,7 @@ const products = [{
     image: "images/products/product-1.png",
     name: "strawberry",
     detail: "Associate with being lively, creative and dramatic",
-    price: 14.99,
+    price: 1499,
     rating: 4.5
 }, {
     id: "PRD-1B7E4D",

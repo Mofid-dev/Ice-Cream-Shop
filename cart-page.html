@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/shared/header.css">
+    <link rel="stylesheet" href="styles/pages/cart-page.css">
+    <title>Cart</title>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo/logo.png" alt="">
+        </div>
+
+        <nav class="nav" id="navMenu">
+            <a class="link" href="frosto.html">Home</a>
+            <a class="link" href="frosto.html">About Us</a>
+            <a class="link" href="#">Menu</a>
+            <a class="link" href="#">Gallery</a>
+            <a class="link" href="#">Contact</a>
+            <a href="cart.html" class="cart">
+                <span class="count-items js-count-items">0</span>
+                <img src="images/icons/cart-icon.png" alt="">
+            </a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </header>
+    <div class="cart-page">
+        <div class="main">
+            <h1 class="page-title">Review your order</h1>
+            <div class="container">
+                <div class="product-list">
+                    <div class="product">
+                        <img src="images/products/product-1.png" alt="">
+                        <div class="product-detail">
+                            <span class="name">strawberry</span>
+                            <p class="price">$14.99</p>
+                            <div class="quantity-section">
+                                <p>Quantity: <span class="quantity">2</span></p>
+                                <span class="quantity-links update">Update</span>
+                                <span class="quantity-links delete">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="images/products/product-2.png" alt="">
+                        <div class="product-detail">
+                            <h3 class="name">Vanilla</h3>
+                            <p class="price">$24.99</p>
+                            <div class="quantity-section">
+                                <p>Quantity: <span class="quantity">1</span></p>
+                                <span class="quantity-links update">Update</span>
+                                <span class="quantity-links delete">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Order-Summary</h2>
+                    <div class="payment-summary-row">
+                        <div>Items (6):</div>
+                        <div class="payment-summary-money">64.90</div>
+                    </div>
+                    <div class="payment-summary-row payment-summary-gap ">
+                        <div>Shipping & handling:</div>
+                        <div class="payment-summary-money payment-summary-border">0.00</div>
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>Total before tax:</div>
+                        <div class="payment-summary-money">64.90</div>
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>Estimated tax (10%):</div>
+                        <div class="payment-summary-money">6.49</div>
+                    </div>
+                    <div class="payment-summary-row total">
+                        <div>Order total:</div>
+                        <div class="payment-summary-money">71.39</div>
+                    </div>
+                    <button class="payment-button">Place your order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
